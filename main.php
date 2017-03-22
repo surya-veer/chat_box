@@ -85,7 +85,6 @@ setInterval(function(){
         d=d+100;
 });
 },100);
-
 </script>  
 </body>
 </html>
