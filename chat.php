@@ -1,10 +1,10 @@
 <?php
 session_start();
-	$con=mysql_connect("localhost","root","");
-	mysql_select_db("iiti");
+	$con=mysqli_connect("localhost","root","");
+	mysqli_select_db($con,"iiti");
 	// echo $con;
-	$getdata=mysql_query("SELECT * FROM chat");
+	$getdata=mysqli_query($con,"SELECT * FROM chat");
 
-	while ($row = mysql_fetch_array($getdata))
+	while ($row = mysqli_fetch_array($getdata))
 			{echo '<b>'.$row[2].'</b>'.": ". $row[1] . "<br>";}
 ?>
