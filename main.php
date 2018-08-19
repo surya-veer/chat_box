@@ -1,7 +1,7 @@
 <?php
 session_start();
-  $con=mysql_connect("localhost","root","");
-  mysql_select_db("iiti");
+  $con=mysqli_connect("localhost","root","");
+  mysqli_select_db($con,"iiti");
   //echo $con;
 
   if(isset($_POST['Submit']))
@@ -11,11 +11,11 @@ session_start();
     $chat=($_POST['chat_box']);
     $name=$_SESSION['name'];
     if($chat){
-    $queryName=mysql_query("INSERT INTO chat (id,message,name) VALUES (NULL, '$chat','$name')");
+    $queryName=mysqli_query($con,"INSERT INTO chat (id,message,name) VALUES (NULL, '$chat','$name')");
     $chat=NULL;
     }
-    $getdata=mysql_query("SELECT * FROM chat");
-    echo $getdata;
+    $getdata=mysqli_query($con,"SELECT * FROM chat");
+    // echo $getdata;
   }
 
 
